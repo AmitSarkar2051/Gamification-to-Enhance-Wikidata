@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+<style>
+    .sidenav {
+        height: 100%;
+        width: 25%;
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 5%;
+    }
+
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .welcome {
+        padding-top: 5%;
+        padding-left: 10%;
+        color: white;
+    }
+
+    .profile-pic {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
+    }
+
+    .details {
+        padding-top: 5%;
+        padding-left: 10%;
+        color: white;
+    }
+
+    .page-content {
+        margin-left: 25%;
+        padding: 5% 8% 5% 8%;
+    }
+
+    .title {
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    .instruction {
+        font-size: 2.5vh;
+        padding-bottom: 1%;
+    }
+
+    .btn-lg {
+        width: 20%;
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+    <div class="sidenav">
+        <h1 class="welcome">Welcome username!</h1>
+        {% load static %}
+        <img src="{% static 'default.png' %}" alt="" class="profile-pic">
+
+        <div class="details">
+            <h2>Full Name</h2>
+            <h3>Score: 100</h3>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <h1 class="title">Genres</h1>
+
+        <div class="text-center">
+            <a href="#" class="btn btn-dark btn-lg" role="button">Start</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
