@@ -75,13 +75,13 @@
 <div class="container-fluid">
 
     <div class="sidenav">
-        <h1 class="welcome">Welcome username!</h1>
+        <h1 class="welcome">Welcome {{user.username}}!</h1>
         {% load static %}
         <img src="{% static 'default.png' %}" alt="" class="profile-pic">
 
         <div class="details">
-            <h2>Full Name</h2>
-            <h3>Score: 100</h3>
+            <h2>{{user.first_name}} {{user.last_name}}</h2>
+            <h3>Score: {{user.trust_score}}</h3>
         </div>
     </div>
 

@@ -88,9 +88,22 @@
     <div class="page-content">
         <h1 class="title">Genres</h1>
 
-        <div class="text-center">
-            <a href="quiz" class="btn btn-dark btn-lg" role="button">Start</a>
-        </div>
+        <form action="genres" method="POST">
+            {% csrf_token %}
+            {{ form.genre }}
+
+            <div class="genre-cards">
+                {% for genre in genres %}
+                <div class="card"
+                    onclick="console.log(this.innerHTML);document.getElementById('{{ form.genre.auto_id }}').value=this.innerHTML">
+                    {{ genre }}
+                </div>
+                {% endfor %}
+            </div>
+
+            <input type="submit" value="Start Game">
+        </form>
+
     </div>
 </div>
 

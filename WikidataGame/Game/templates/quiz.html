@@ -81,8 +81,14 @@
         </div>
 
         <div class="text-center">
-            <a href="quiz" class="btn btn-primary btn-lg" id="submit" role="button">Submit</a>
+            <a href="/game/quiz/{{genre}}" class="btn btn-primary btn-lg" id="submit" role="button">Submit & Next
+                Question</a>
+        </div>
+
+        <div class="text-center">
+            <a href="/game/genres" class="btn btn-danger btn-lg" id="end_quiz" role="button">Submit & End Quiz</a>
         </div>
     </div>
+</div>
 
-    {% endblock %}
+{% endblock %}
