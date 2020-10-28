@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+<style>
+    .page-content {
+        padding: 5% 8% 0% 8%;
+    }
+
+    .title {
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    .card {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        padding: 2%;
+    }
+
+    .option {
+        font-size: 2.5vh;
+        padding-bottom: 1%;
+    }
+
+    .btn-lg {
+        margin: 2%;
+        width: 20%;
+    }
+</style>
+
+<script type="text/javascript">
+    var interval = setInterval(function () {
+        d1 = document.getElementById('digit1').innerHTML
+        d2 = document.getElementById('digit2').innerHTML
+
+        d2 = (d2 - 1 + 10) % 10
+        if (d2 == 9) {
+            d1 = d1 - 1
+        }
+
+        document.getElementById('digit1').innerHTML = d1
+        document.getElementById('digit2').innerHTML = d2
+
+        if (d1 == 0 && d2 == 0) {
+            clearInterval(interval);
+            // document.getElementById('answer').value = 0
+            document.getElementById('submit').click()
+        }
+    }, 1000)
+</script>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="page-content">
+        <h1 class="title">Quiz</h1>
+    </div>
+
+    <div class="card">
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua?</h3>
+
+        <ol type="A">
+            <li class="option">1</li>
+            <li class="option">2</li>
+            <li class="option">3</li>
+            <li class="option">None of these</li>
+        </ol>
+    </div>
+
+    <div class="text-center">
+        <div id="timer">
+            <span id="digit1">9</span>
+            <span id="digit2">9</span>
+        </div>
+
+        <div class="text-center">
+            <a href="quiz" class="btn btn-primary btn-lg" id="submit" role="button">Submit</a>
+        </div>
+    </div>
+
+    {% endblock %}

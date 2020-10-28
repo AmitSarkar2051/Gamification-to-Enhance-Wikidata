@@ -31,3 +31,7 @@ def home(request):
 
 def genres(request):
     return render(request, 'genres.html')
+
+
+def quiz(request):
+    return render(request, 'quiz.html')
