@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Game.apps.GameConfig',
+    'user.apps.UserConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = 'index'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+EMAIL_HOST_USER="pztcommerical@gmail.com"
+EMAIL_HOST_PASSWORD="Bhootnath1@"

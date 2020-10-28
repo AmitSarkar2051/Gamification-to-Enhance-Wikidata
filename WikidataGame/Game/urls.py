@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
+from django.contrib import admin 
 
 from . import views
 
@@ -8,10 +9,11 @@ from . import views
 ## url is entered -> matches url -> goes into views calls  a function -> Function does some computation -> Renders a new page
  
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.index, name="home"),
+    path('Game/sign_up/',views.sign_up,name="sign-up")
     # path('/home', views.home, name='home'),
     # path('/genres', views.genres, name='genres'),
     # path('/quiz', views.quiz, name='quiz'),
 ]
 
-urlpatterns += staticfiles_urlpatterns()
+# urlpatterns += staticfiles_urlpatterns()
