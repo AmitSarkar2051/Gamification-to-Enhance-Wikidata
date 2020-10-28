@@ -21,7 +21,7 @@ class Question(models.Model):
     question_id = models.AutoField(primary_key = True)
     genre_name = models.CharField(max_length=100,blank=True,null=True)
     question_hin = models.CharField(max_length=200)
-    answer = models.CharField(max_length=200)
+    correct_answer = models.CharField(max_length=200)
     reference = models.URLField()
     question_eng = models.CharField(max_length=200)
     correctness_score = models.FloatField(default=0)

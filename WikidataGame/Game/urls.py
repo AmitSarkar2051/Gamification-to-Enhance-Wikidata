@@ -9,9 +9,9 @@ from . import views
  
 urlpatterns = [
     path('', views.index, name='index'),
-    path('/home', views.home, name='home'),
-    path('/genres', views.genres, name='genres'),
-    path('/quiz', views.quiz, name='quiz'),
+    # path('/home', views.home, name='home'),
+    # path('/genres', views.genres, name='genres'),
+    # path('/quiz', views.quiz, name='quiz'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
