@@ -95,7 +95,7 @@
             <div class="genre-cards">
                 {% for genre in genres %}
                 <div class="card"
-                    onclick="console.log(this.innerHTML);document.getElementById('{{ form.genre.auto_id }}').value=this.innerHTML">
+                    onclick="document.getElementById('{{ form.genre.auto_id }}').value=this.innerHTML">
                     {{ genre }}
                 </div>
                 {% endfor %}

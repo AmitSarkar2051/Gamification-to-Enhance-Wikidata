@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 import random
-from .forms import GenreForm
+from .forms import GenreForm, QuizForm
 from .models import Question, Answer
 
 
@@ -35,15 +35,28 @@ def home(request):
     return render(request, 'home.html', context)
 
 
+def get_genres(request):
+    gen_query_set = set(
+        list(Question.objects.values_list('genre_name', flat=True)))
+    genre_list = []
+
+    for genre in gen_query_set:
+        if genre:
+            genre_list.append(genre)
+
+    return genre_list
+
+
 def genres(request):
     context = {}
-    context['genres'] = ['Maths', 'Computer', 'Chemistry']
+
+    context['genres'] = get_genres(request)
+
     form = GenreForm(request.POST)
     context['form'] = form
 
     if request.method == 'POST' and form.is_valid():
         genre = form.cleaned_data['genre']
-        print(genre)
         return redirect('/game/quiz/' + genre)
 
     return render(request, 'genres.html', context)
@@ -52,11 +65,21 @@ def genres(request):
 def quiz(request, genre):
     print(genre)
     context = {}
+
     genre_questions = Question.objects.filter(genre_name=genre)
     total_questions = len(genre_questions)
-    print(total_questions, genre_questions)
     num = random.randint(0, total_questions - 1)
-    print(num)
-    context['question_hin'] = genre_questions[num]
+
+    curr_question = genre_questions[num]
+    context['question_hin'] = curr_question.question_hin
     context['genre'] = genre
+
+    form = QuizForm(request.POST)
+    context['form'] = form
+
+    if request.method == 'POST' and form.is_valid():
+        answer = form.cleaned_data['answer']
+        print(answer)
+        return redirect('/game/quiz/' + genre)
+
     return render(request, 'quiz.html', context)

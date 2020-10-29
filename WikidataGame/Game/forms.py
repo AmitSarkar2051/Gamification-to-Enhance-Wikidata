@@ -20,3 +20,7 @@ class HandleForm(forms.Form):
 
 class GenreForm(forms.Form):
     genre = forms.CharField(max_length=100)
+
+
+class QuizForm(forms.Form):
+    answer = forms.CharField(max_length=100)
