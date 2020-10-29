@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 import random
 from .forms import GenreForm, QuizForm
 from .models import Question, Answer
+import urllib.request
 
 
 @login_required
@@ -85,7 +86,55 @@ def quiz(request, genre):
     if request.method == 'POST' and form.is_valid():
         answer = form.cleaned_data['answer']
         reference = form.cleaned_data['reference']
-        print(curr_question, answer, reference, current_user)
+        check(curr_question, current_user, answer, reference)
         return redirect('/quiz&' + genre)
 
     return render(request, 'quiz.html', context)
+
+
+def check(question, current_user, answer = None, reference = None):
+
+    if answer is None:
+        return 
+
+    question_text = question.question_hin
+    question_id = question.question_id
+    # prev_trust = current_user.trust_score
+    answers = list(Answer.objects.values_list('answer', flat=True).filter(question_id=question))
+    print(answers)
+
+    # if answer does not exist
+    if answer not in answers:
+        if reference is not None:
+            if reference_checker(reference, question, answer):
+                answer_obj = Answer(question_id=question, answer=answer, confidence_score=0.2)
+                answer_obj.save()
+                # current_user.trust_score += 0.5
+            else:
+                answer_obj = Answer(question_id=question, answer=answer, confidence_score=0.01)
+                answer_obj.save()
+                # current_user.trust_score -= 0.08
+        else:
+            answer_obj = Answer(question_id=question, answer=answer, confidence_score=1/10)
+            answer_obj.save()
+            # current_user.trust_score += 0.05
+    else:
+        answer_obj = Answer.objects.get(answer=answer)
+        if reference is not None:
+            # check which answer is the most used and score accordingly, also trust score will play a role here
+            # print(answer_list)
+            if reference_checker(reference, question, answer):
+                answer_obj.confidence_score += 0.2
+                # current_user.trust_score += 0.3
+            else:
+                answer_obj.confidence_score += 0.08
+                # current_user.trust_score -= 0.1
+        else:
+            answer_obj.confidence_score += 0.1
+            # current_user.trust_score += 0.08
+        answer_obj.save()
+                
+            
+
+def reference_checker(reference, question, answer):
+    return True
