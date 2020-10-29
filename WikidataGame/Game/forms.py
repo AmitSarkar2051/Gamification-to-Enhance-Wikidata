@@ -23,4 +23,5 @@ class GenreForm(forms.Form):
 
 
 class QuizForm(forms.Form):
-    answer = forms.CharField(max_length=100)
+    answer = forms.CharField(max_length=100, required=False)
+    reference = forms.CharField(max_length=500, required=False)

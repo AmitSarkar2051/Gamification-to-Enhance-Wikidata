@@ -17,13 +17,27 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 60%;
-        padding: 2%;
+        width: 50%;
+        padding: 2% 4% 2% 4%;
     }
 
     .option {
         font-size: 2.5vh;
         padding-bottom: 1%;
+        cursor: pointer;
+    }
+
+    .timer {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1%;
+        border-style: solid;
+        border-radius: 50%;
+        width: 6%;
+        height: 10%;
+        padding-top: 2%;
+        padding-bottom: 2%;
     }
 
     .btn-lg {
@@ -34,21 +48,13 @@
 
 <script type="text/javascript">
     var interval = setInterval(function () {
-        d1 = document.getElementById('digit1').innerHTML
-        d2 = document.getElementById('digit2').innerHTML
+        t = document.getElementById('time').innerHTML;
+        t = t - 1;
+        document.getElementById('time').innerHTML = t;
 
-        d2 = (d2 - 1 + 10) % 10
-        if (d2 == 9) {
-            d1 = d1 - 1
-        }
-
-        document.getElementById('digit1').innerHTML = d1
-        document.getElementById('digit2').innerHTML = d2
-
-        if (d1 == 0 && d2 == 0) {
+        if (t == 0) {
             clearInterval(interval);
-            // document.getElementById('answer').value = 0
-            document.getElementById('submit').click()
+            document.getElementById('submit').click();
         }
     }, 1000)
 </script>
@@ -64,7 +70,6 @@
 
     <form action="quiz&{{genre}}" method="POST">
         {% csrf_token %}
-        {{ form.answer }}
 
         <div class="card">
             <h3>{{ question_hin }}</h3>
@@ -76,26 +81,31 @@
                 </li>
                 <li class="option" onclick="document.getElementById('{{ form.answer.auto_id }}').value=this.innerHTML">3
                 </li>
-                <li class="option" onclick="document.getElementById('{{ form.answer.auto_id }}').value=this.innerHTML">
-                    None of these</li>
             </ol>
+
+            <div class="text-center">
+                <h4>
+                    Answer(If it is not in the above options): <br>
+                    {{ form.answer }}<br><br>
+                    Reference: <br>
+                    {{ form.reference }}
+                </h4>
+            </div>
         </div>
 
         <div class="text-center">
-            <div id="timer">
-                <span id="digit1">9</span>
-                <span id="digit2">9</span>
+            <div class="timer">
+                <span id="time">100 </span>
+                <span>seconds</span>
             </div>
 
-            <div class="text-center">
-                <input type="submit" class="btn btn-primary btn-lg" value="Submit & Next Question">
-            </div>
+            <input type="submit" id='submit' class="btn btn-primary btn-lg" value="Submit & Next Question">
         </div>
 
     </form>
 
     <div class="text-center">
-        <a href="/game/genres" class="btn btn-danger btn-lg" id="end_quiz" role="button">End Quiz</a>
+        <a href="/genres" class="btn btn-danger btn-lg" id="end_quiz" role="button">End Quiz</a>
     </div>
 </div>
 

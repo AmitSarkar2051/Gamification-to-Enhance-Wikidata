@@ -60,13 +60,12 @@ def genres(request):
 
     if request.method == 'POST' and form.is_valid():
         genre = form.cleaned_data['genre']
-        return redirect('/game/quiz&' + genre)
+        return redirect('/quiz&' + genre)
 
     return render(request, 'genres.html', context)
 
 
 def quiz(request, genre):
-    print(genre)
     context = {}
 
     current_user = request.user
@@ -85,7 +84,8 @@ def quiz(request, genre):
 
     if request.method == 'POST' and form.is_valid():
         answer = form.cleaned_data['answer']
-        print(answer)
-        return redirect('/game/quiz&' + genre)
+        reference = form.cleaned_data['reference']
+        print(curr_question, answer, reference, current_user)
+        return redirect('/quiz&' + genre)
 
     return render(request, 'quiz.html', context)

@@ -43,7 +43,7 @@ def Login(request):
         if user is not None:
             form = login(request, user)
             messages.success(request, f' wecome {username} !!')
-            return redirect('/game/home')
+            return redirect('/home')
         else:
             messages.info(request, f'account done not exit plz sign in')
     form = AuthenticationForm()

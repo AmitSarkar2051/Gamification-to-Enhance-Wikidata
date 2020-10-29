@@ -58,12 +58,22 @@
         padding-bottom: 2%;
     }
 
-    .instruction {
-        font-size: 2.5vh;
-        padding-bottom: 1%;
+    .card {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        padding: 10%;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .card:hover {
+        background-color: rgb(230, 227, 227);
     }
 
     .btn-lg {
+        margin: 5%;
         width: 20%;
     }
 </style>
@@ -90,17 +100,22 @@
 
         <form action="genres" method="POST">
             {% csrf_token %}
-            {{ form.genre }}
+            <div style="display: none;">{{ form.genre }}</div>
 
-            <div class="genre-cards">
+            <div class="row">
                 {% for genre in genres %}
-                <div class="card" onclick="document.getElementById('{{ form.genre.auto_id }}').value=this.innerHTML">
-                    {{ genre }}
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card"
+                        onclick="document.getElementById('{{ form.genre.auto_id }}').value=this.innerHTML;document.getElementsByClassName('card').style.background='white';this.style.background='rgb(230, 227, 227)'">
+                        {{ genre }}
+                    </div>
                 </div>
                 {% endfor %}
             </div>
 
-            <input type="submit" value="Start Game">
+            <div class="text-center">
+                <input type="submit" class="btn btn-lg btn-primary" value="Start Game">
+            </div>
         </form>
 
     </div>
