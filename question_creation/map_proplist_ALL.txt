@@ -1,0 +1,203 @@
+P5198,ASC Leiden Thesaurus ID
+P8061,AGROVOC_ID
+P2163,FAST_ID
+P8494,DSSTOX_compound_identifier
+P2840,NSC number(numeric identifier for substances submitted to the National Cancer Institute (NCI) for testing and evaluation)
+P1987,MCN code(Mercosur code)
+P8472,Encyclopedie berbere ID(article of the French encyclopedia about the Berbers)
+P274,chemical formula(formula molecular formula)
+P6263,MinDat mineral ID (identifier for a mineral)
+P8408,KBpedia ID (identifier for the KBpedia knowledge graph, which provides consistent mappings across seven large-scale public knowledge bases including Wikidata, and is used to promote data interoperability and extraction of training sets for machine learning)
+P1121,oxidation state(oxidation number in oxidation state)
+P715,DrugBank ID (identifier in the bioinformatics and cheminformatics database from the University of Alberta)
+P575,time of discovery or invention
+P2284,price
+P592,ChEMBL ID(identifier from a chemical database of bioactive molecules with drug-like properties)
+P920,LEM ID(subject headings for public libraries maintained by the Spanish Ministry of Education, Culture and Sport)
+P1417,Encyclopædia Britannica Online ID
+P5082,Store medisinske leksikon ID (identifier of an article in the online encyclopedia sml.snl.no)
+P2055,electrical conductivity(electrical conductivity of a substance with phase of matter and temperature as qualifiers)
+P2066,fusion enthalpy(fusion enthalpy of a substance at the melting temperature)
+P487,Unicode character(Unicode character representing the item)
+P3073,CosIng number (Number for a chemical substance in the European CosIng database)
+P3780,active ingredient in (is part of and forms biologically active component. Inverse of "has active ingredient")
+P1424,topic's main template
+P2175,medical condition treated (disease that this pharmaceutical drug, procedure, or therapy is used to treat)
+P6900,NicoNicoPedia ID(identifier for an article in NicoNicoPedia)
+P695,UN number(four-digit numbers that identify hazardous substances)
+P2102,boiling point
+P652,UNII (identifier issued by the FDA / Unique Ingredient Identifier)
+P6694,MeSH concept ID(identifier of a Medical Subject Headings concept)
+P628,E number(number for food additives that are legal in the European Union)
+P989,spoken text audio,x
+P7827,Spanish Vikidia ID,name of the article in Spanish Vikidia
+P1807,Great Aragonese Encyclopedia ID(identifier in the Spanish language, Aragon-themed, Great Aragonese Encyclopedia (GEA))
+P3365,Treccani ID(identifier for the Treccani website)
+P1900,EAGLE id(identifier of an epigraphic concept in the Europeana Network of Ancient Greek and Latin Epigraphy(EAGLE) vocabulary)
+P2119,vapor pressure(pressure exerted by a vapor in thermodynamic equilibrium with its condensed phases	)
+P1109,refractive index(refractive index of a substance with wavelength and temperature as qualifiers)
+P2167,UNSPSC Code(identifier for taxonomy of products and services for use in eCommerce)
+P5930,Open Food Facts ingredient ID(identifier of a food ingredient on Open Food Facts)
+P6081
+P2822
+P683
+P3117
+P2347
+P4223
+P233
+P2057
+P4842
+P2566
+P234
+P2868
+P8519
+P2260
+P1051
+P1225
+P2300
+P2004
+P268
+P8121
+P2759
+P2056
+P366
+P2115
+P6385
+P2959
+P657
+P7832
+P2204
+P1441
+P486
+P6623
+P7084
+P4147
+P7822
+P2892
+P898
+P3471
+P665
+P7049
+P8072
+P7818
+P3070
+P7524
+P2849
+P1245
+P662
+P3569
+P7388
+P5437
+P5483
+P5679
+P1108
+P5395
+P2120
+P6075
+P6366
+P2184
+P922
+P4235
+P5247
+P3241
+P1579
+P4746
+P5357
+P8483
+P1578
+P498
+P6363
+P5220
+P3417
+P1542
+P1748
+P3222
+P2405
+P3832
+P4213
+P1820
+P232
+P5019
+P5076
+P6573
+P661
+P906
+P2101
+P1088
+P5480
+P4212
+P672
+P5555
+P5798
+P2407
+P2129
+P461
+P235
+P3221
+P5417
+P1931
+P8406
+P1282
+P3827
+P3031
+P5674
+P7033
+P186
+P6706
+P4254
+P2079
+P7025
+P2240
+P703
+P638
+P8000
+P7830
+P3916
+P4342
+P2113
+P2910
+P2924
+P6262
+P679
+P3345
+P4527
+P2116
+P4168
+P443
+P2581
+P1036
+P1461
+P2404
+P4732
+P3612
+P1296
+P267
+P3071
+P3219
+P2152
+P1086
+P2054
+P231
+P950
+P5993
+P5994
+P6404
+P246
+P4839
+P1014
+P5593
+P5676
+P2950
+P2017
+P556
+P5673
+P7982
+P5063
+P4952
+P7829
+P5008
+P902
+P1552
+P5604
+P2114
+P5479
