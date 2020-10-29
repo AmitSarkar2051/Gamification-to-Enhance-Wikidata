@@ -1,0 +1,61 @@
+#nobel peace
+SELECT ?item ?itemLabel 
+WHERE 
+{
+  ?item wdt:P31 wd:Q5.
+  ?item wdt:P166 wd:Q35637
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+
+#Nobel Physics
+SELECT ?item ?itemLabel 
+WHERE 
+{
+  ?item wdt:P31 wd:Q5.
+  ?item wdt:P166 wd:Q38104
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+
+#chem elem
+SELECT ?item ?itemLabel WHERE {
+  ?item wdt:P31 wd:Q11344.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],hi". }
+}
+LIMIT 20
+
+#chm compound
+
+SELECT ?item ?itemLabel WHERE {
+  ?item wdt:P31 wd:Q11173.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],hi". }
+}
+LIMIT 20
+
+
+SELECT ?wdLabel {
+	  VALUES (?element) {(wd:"""+str(all_elements[i])+""")}
+	  ?element ?p ?statement .
+	  
+	  ?wd wikibase:claim ?p.
+	  
+	  SERVICE wikibase:label { bd:serviceParam wikibase:language "hi" }
+	} ORDER BY ?wd ?statement ?ps_
+
+#einstein property
+SELECT ?wdLabel {
+	  VALUES (?element) {(wd:Q937)}
+	  ?element ?p ?statement .
+	  
+	  ?wd wikibase:claim ?p.
+	  
+	  SERVICE wikibase:label { bd:serviceParam wikibase:language "hi" }
+	} ORDER BY ?wd ?statement ?ps_
+
+
+	
+SELECT ?wdLabel {
+	    VALUES (?element) {(wd:Q91655999)}
+	    ?element ?p ?statement .
+	    ?wd wikibase:claim ?p.
+	    SERVICE wikibase:label { bd:serviceParam wikibase:language "hi" }
+	    } ORDER BY ?wd ?statement ?ps_

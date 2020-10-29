@@ -1,0 +1,40 @@
+P5198,ASC Leiden Thesaurus ID
+P8061,AGROVOC_ID
+P2163,FAST_ID
+P8494,DSSTOX_compound_identifier
+P2840,NSC number(numeric identifier for substances submitted to the National Cancer Institute (NCI) for testing and evaluation)
+P1987,MCN code(Mercosur code)
+P8472,Encyclopedie berbere ID(article of the French encyclopedia about the Berbers)
+P274,chemical formula(formula molecular formula)
+P6263,MinDat mineral ID (identifier for a mineral)
+P8408,KBpedia ID (identifier for the KBpedia knowledge graph, which provides consistent mappings across seven large-scale public knowledge bases including Wikidata, and is used to promote data interoperability and extraction of training sets for machine learning)
+P1121,oxidation state(oxidation number in oxidation state)
+P715,DrugBank ID (identifier in the bioinformatics and cheminformatics database from the University of Alberta)
+P575,time of discovery or invention
+P2284,price
+P592,ChEMBL ID(identifier from a chemical database of bioactive molecules with drug-like properties)
+P920,LEM ID(subject headings for public libraries maintained by the Spanish Ministry of Education, Culture and Sport)
+P1417,Encyclopædia Britannica Online ID
+P5082,Store medisinske leksikon ID (identifier of an article in the online encyclopedia sml.snl.no)
+P2055,electrical conductivity(electrical conductivity of a substance with phase of matter and temperature as qualifiers)
+P2066,fusion enthalpy(fusion enthalpy of a substance at the melting temperature)
+P487,Unicode character(Unicode character representing the item)
+P3073,CosIng number (Number for a chemical substance in the European CosIng database)
+P3780,active ingredient in (is part of and forms biologically active component. Inverse of "has active ingredient")
+P1424,topic's main template
+P2175,medical condition treated (disease that this pharmaceutical drug, procedure, or therapy is used to treat)
+P6900,NicoNicoPedia ID(identifier for an article in NicoNicoPedia)
+P695,UN number(four-digit numbers that identify hazardous substances)
+P2102,boiling point
+P652,UNII (identifier issued by the FDA / Unique Ingredient Identifier)
+P6694,MeSH concept ID(identifier of a Medical Subject Headings concept)
+P628,E number(number for food additives that are legal in the European Union)
+P989,spoken text audio,x
+P7827,Spanish Vikidia ID,name of the article in Spanish Vikidia
+P1807,Great Aragonese Encyclopedia ID(identifier in the Spanish language, Aragon-themed, Great Aragonese Encyclopedia (GEA))
+P3365,Treccani ID(identifier for the Treccani website)
+P1900,EAGLE id(identifier of an epigraphic concept in the Europeana Network of Ancient Greek and Latin Epigraphy(EAGLE) vocabulary)
+P2119,vapor pressure(pressure exerted by a vapor in thermodynamic equilibrium with its condensed phases	)
+P1109,refractive index(refractive index of a substance with wavelength and temperature as qualifiers)
+P2167,UNSPSC Code(identifier for taxonomy of products and services for use in eCommerce)
+P5930,Open Food Facts ingredient ID(identifier of a food ingredient on Open Food Facts)
