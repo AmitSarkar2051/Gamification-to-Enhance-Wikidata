@@ -10,7 +10,7 @@ import random
 from .forms import GenreForm, QuizForm
 from .models import Question, Answer
 import urllib.request
-
+from bs4 import BeautifulSoup
 
 @login_required
 def index(request):
@@ -119,7 +119,7 @@ def check(question, current_user, answer = None, reference = None):
             answer_obj.save()
             # current_user.trust_score += 0.05
     else:
-        answer_obj = Answer.objects.get(answer=answer)
+        answer_obj = Answer.objects.get(answer=answer,question_id=question)
         if reference is not None:
             # check which answer is the most used and score accordingly, also trust score will play a role here
             # print(answer_list)
@@ -137,4 +137,19 @@ def check(question, current_user, answer = None, reference = None):
             
 
 def reference_checker(reference, question, answer):
-    return True
+    f = urllib.request.urlopen(reference)
+    content = f.read().decode('utf-8')
+    soup = BeautifulSoup(content, features="html.parser")
+
+    for script in soup(["script","style"]):
+        script.decompose()
+
+    strips = list(soup.stripped_strings)
+    question_text = question.question_hin
+    question_tokens = question_text.split(' ')
+    key_terms = [question_tokens[1], question_tokens[2], answer]
+
+    if answer not in strips:
+        return False
+    else:
+        return True
