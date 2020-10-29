@@ -29,8 +29,8 @@ def sign_up(request):
 
 
 def home(request):
-    current_user = request.user
     context = {}
+    current_user = request.user
     context['user'] = User.objects.get(username=current_user)
     return render(request, 'home.html', context)
 
@@ -50,6 +50,9 @@ def get_genres(request):
 def genres(request):
     context = {}
 
+    current_user = request.user
+    context['user'] = User.objects.get(username=current_user)
+
     context['genres'] = get_genres(request)
 
     form = GenreForm(request.POST)
@@ -57,7 +60,7 @@ def genres(request):
 
     if request.method == 'POST' and form.is_valid():
         genre = form.cleaned_data['genre']
-        return redirect('/game/quiz/' + genre)
+        return redirect('/game/quiz&' + genre)
 
     return render(request, 'genres.html', context)
 
@@ -65,6 +68,9 @@ def genres(request):
 def quiz(request, genre):
     print(genre)
     context = {}
+
+    current_user = request.user
+    context['user'] = User.objects.get(username=current_user)
 
     genre_questions = Question.objects.filter(genre_name=genre)
     total_questions = len(genre_questions)
@@ -80,6 +86,6 @@ def quiz(request, genre):
     if request.method == 'POST' and form.is_valid():
         answer = form.cleaned_data['answer']
         print(answer)
-        return redirect('/game/quiz/' + genre)
+        return redirect('/game/quiz&' + genre)
 
     return render(request, 'quiz.html', context)
