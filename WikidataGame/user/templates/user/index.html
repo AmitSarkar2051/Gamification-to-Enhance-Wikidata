@@ -9,7 +9,7 @@
   <meta name="title" content="project">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="language" content="English">
-  <meta name="author" content="vinayak sharma">
+  <meta name="author" content="Zegatron">
 
   <title>{{title}}</title>
 
@@ -63,7 +63,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" class="styleheader" href="{% url "index" %}">project</a>
+          <a class="navbar-brand" class="styleheader" href="{% url "index" %}">IRE Major Project</a>
         </div>
         <div class="collapse navbar-collapse" id="mainNavBar">
           <ul class="nav navbar-nav navbar-right">
@@ -87,9 +87,9 @@
   <div class="row">
     {% block start %}
     {% if user.is_authenticated %}
-    <center><h1>welcome, here</h1></center>
+    <center><h1>Welcome!!!</h1></center>
     {% else %}
-    <center><h1>log in, plz . . .</h1></center>
+    <center><h1>You need to Log In to Play the Game!!!</h1></center>
     {% endif %}
     {% endblock %}
   </div>
