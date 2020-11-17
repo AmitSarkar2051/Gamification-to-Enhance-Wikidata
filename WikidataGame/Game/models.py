@@ -15,7 +15,8 @@ class Question(models.Model):
     correct_answer = models.CharField(max_length=200)
     reference = models.URLField()
     question_eng = models.CharField(max_length=200)
-    correctness_score = models.FloatField(default=0)
+    number_of_views = models.FloatField(default=0)
+    age = models.FloatField(default=0)
 
 
 class Answer(models.Model):

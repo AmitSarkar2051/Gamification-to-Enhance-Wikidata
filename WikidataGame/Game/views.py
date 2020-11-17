@@ -66,6 +66,17 @@ def genres(request):
     return render(request, 'genres.html', context)
 
 
+def aging():
+
+    ## for a given question we need to take into account the number of users we have shown the question till now, the number of unique answers and the confidence among those answers. 
+
+    ## input -> Question
+    ## output -> Question's age
+
+
+
+
+
 def quiz(request, genre):
     context = {}
 
@@ -74,6 +85,8 @@ def quiz(request, genre):
 
     genre_questions = Question.objects.filter(genre_name=genre)
     total_questions = len(genre_questions)
+
+    ## here, the questions will be ranked according to their age and among the top aged question, we will randomly pick from top 3.
     num = random.randint(0, total_questions - 1)
 
     curr_question = genre_questions[num]
@@ -95,6 +108,8 @@ def quiz(request, genre):
 def check(question, current_user, answer = None, reference = None):
 
     if answer is None:
+
+        ## increase view count
         return 
 
     question_text = question.question_hin
