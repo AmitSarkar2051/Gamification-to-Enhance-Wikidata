@@ -16,6 +16,7 @@ import math
 from numpy.random import choice
 
 age_threshold = 200
+confidence_threshold = 200
 
 @login_required
 def index(request):
@@ -73,21 +74,17 @@ def genres(request):
 
 def aging(question, unique_answers, confidence_score):
 
-    ## for a given question we need to take into account the number of users we have shown the question till now, the number of unique answers and the confidence among those answers. 
+    if confidence_score > confidence_threshold:
+        ### TO BE ADDED ## update the question's answer into the wikitable using the bot from here.
+        question.is_updated = True
 
-    ## input -> Question
-    ## output -> Question's age
-
-    print("Aging")
     new_views = question.number_of_views + 1
     new_age = question.age
 
     if unique_answers == 0:
         unique_answers = 1
-    ## the confidence score among all the various answers will be following a quadratic type of curve, where it will be responsible for aging if the score is too high or too low and less weight if it lies somewhere in middle. 
 
     if new_views < 10:
-        
         ## less chances of having a definite answer, so less weightage to number of unique answers and thier correctness
         new_age = 3 * new_views + (10 * (1/unique_answers)) + (100 * math.pow(confidence_score-0.4,2))
     else:
@@ -95,7 +92,6 @@ def aging(question, unique_answers, confidence_score):
         
 
     if new_age > age_threshold:
-
         ### TO BE ADDED ## update the question's answer into the wikitable using the bot from here.
         question.is_updated = True
 
@@ -103,6 +99,7 @@ def aging(question, unique_answers, confidence_score):
     question.number_of_views = new_views
     question.save()
     return
+
 
 def pick_question(genre):
 
@@ -120,6 +117,7 @@ def pick_question(genre):
     curr_question = curr_question_list[0]
 
     return curr_question
+
 
 def quiz(request, genre):
     context = {}
@@ -187,9 +185,8 @@ def check(question, current_user, answer = None, reference = None):
 
     best_answer_confidence = 0
     aging(question, len(answers), best_answer_confidence)
-                    
-            
 
+                                
 def reference_checker(reference, question, answer):
     f = urllib.request.urlopen(reference)
     content = f.read().decode('utf-8')
