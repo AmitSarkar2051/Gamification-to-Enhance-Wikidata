@@ -120,7 +120,7 @@ def pick_question(genre):
     curr_question = curr_question_list[0]
 
     return curr_question
-    
+
 def quiz(request, genre):
     context = {}
 
