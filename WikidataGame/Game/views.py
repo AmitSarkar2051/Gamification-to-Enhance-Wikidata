@@ -13,6 +13,8 @@ import urllib.request
 from bs4 import BeautifulSoup
 import math
 
+from numpy.random import choice
+
 age_threshold = 200
 
 @login_required
@@ -76,9 +78,12 @@ def aging(question, unique_answers, confidence_score):
     ## input -> Question
     ## output -> Question's age
 
+    print("Aging")
     new_views = question.number_of_views + 1
     new_age = question.age
 
+    if unique_answers == 0:
+        unique_answers = 1
     ## the confidence score among all the various answers will be following a quadratic type of curve, where it will be responsible for aging if the score is too high or too low and less weight if it lies somewhere in middle. 
 
     if new_views < 10:
@@ -99,25 +104,30 @@ def aging(question, unique_answers, confidence_score):
     question.save()
     return
 
-def pick_questions(genre):
-    pass
+def pick_question(genre):
 
+    genre_questions = Question.objects.filter(genre_name=genre, is_updated = False)
+    total_questions = len(genre_questions)
+    
+    weights = []
+    for question in genre_questions:
+        if question.age == 0:
+            weights.append(100000)
+        else:
+            weights.append(1/question.age)
 
+    curr_question_list = random.choices(genre_questions, weights, k=1)
+    curr_question = curr_question_list[0]
 
+    return curr_question
+    
 def quiz(request, genre):
     context = {}
 
     current_user = request.user
     context['user'] = User.objects.get(username=current_user)
 
-    genre_questions = Question.objects.filter(genre_name=genre)
-    total_questions = len(genre_questions)
-
-
-    ## here, the questions will be ranked according to their age and among the top aged question, we will randomly pick from top 3.
-    num = random.randint(0, total_questions - 1)
-
-    curr_question = genre_questions[num]
+    curr_question = pick_question(genre)
     context['question_hin'] = curr_question.question_hin
     context['genre'] = genre
 
