@@ -126,7 +126,9 @@ def quiz(request, genre):
     context['user'] = User.objects.get(username=current_user)
 
     curr_question = pick_question(genre)
-    context['question_hin'] = curr_question.question_hin
+    context['question_object'] = curr_question.question_object
+    context['question_property'] = curr_question.question_property
+
     context['genre'] = genre
 
     form = QuizForm(request.POST)
@@ -146,7 +148,9 @@ def check(question, current_user, answer = None, reference = None):
     if answer is None:
         return 
 
-    question_text = question.question_hin
+    # question_text = question.question_hin
+    question_object = question.question_object
+    question_property = question.question_property
     question_id = question.question_id
     # prev_trust = current_user.trust_score
     answers = list(Answer.objects.values_list('answer', flat=True).filter(question_id=question))
@@ -186,7 +190,7 @@ def check(question, current_user, answer = None, reference = None):
     best_answer_confidence = 0
     aging(question, len(answers), best_answer_confidence)
 
-                                
+
 def reference_checker(reference, question, answer):
     f = urllib.request.urlopen(reference)
     content = f.read().decode('utf-8')
@@ -196,9 +200,9 @@ def reference_checker(reference, question, answer):
         script.decompose()
 
     strips = list(soup.stripped_strings)
-    question_text = question.question_hin
-    question_tokens = question_text.split(' ')
-    key_terms = [question_tokens[1], question_tokens[2], answer]
+    question_object = question.question_object
+    question_property = question.question_property
+    key_terms = [question_object, question_property, answer]
 
     if answer not in strips:
         return False
