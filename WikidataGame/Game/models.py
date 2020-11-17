@@ -17,6 +17,7 @@ class Question(models.Model):
     question_eng = models.CharField(max_length=200)
     number_of_views = models.FloatField(default=0)
     age = models.FloatField(default=0)
+    is_updated = models.BooleanField(default=True)
 
 
 class Answer(models.Model):

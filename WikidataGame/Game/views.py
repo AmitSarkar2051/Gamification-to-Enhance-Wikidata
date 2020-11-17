@@ -66,14 +66,33 @@ def genres(request):
     return render(request, 'genres.html', context)
 
 
-def aging():
+def aging(question, unique_answers):
 
     ## for a given question we need to take into account the number of users we have shown the question till now, the number of unique answers and the confidence among those answers. 
 
     ## input -> Question
     ## output -> Question's age
 
+    new_views = question.number_of_views + 1
+    new_age = question.age
 
+    ### TO BE ADDED ## the confidence score among all the various answers will be following a quadratic type of curve, where it will be responsible for aging if the score is too high or too low and less weight if it lies somewhere in middle. 
+
+    if new_views < 10:
+        
+        ## less chances of having a definite answer, so less weightage to number of unique answers and thier correctness
+        new_age = 3 * new_views + (10 * (1/unique_answers))
+    else:
+        new_age = 3 * new_views + (50 * (1/unique_answers))
+        
+
+    question.age = new_age
+    question.number_of_views = new_views
+    question.save()
+    return
+
+def pick_questions(genre):
+    pass
 
 
 
@@ -85,6 +104,7 @@ def quiz(request, genre):
 
     genre_questions = Question.objects.filter(genre_name=genre)
     total_questions = len(genre_questions)
+
 
     ## here, the questions will be ranked according to their age and among the top aged question, we will randomly pick from top 3.
     num = random.randint(0, total_questions - 1)
@@ -108,14 +128,13 @@ def quiz(request, genre):
 def check(question, current_user, answer = None, reference = None):
 
     if answer is None:
-
-        ## increase view count
         return 
 
     question_text = question.question_hin
     question_id = question.question_id
     # prev_trust = current_user.trust_score
     answers = list(Answer.objects.values_list('answer', flat=True).filter(question_id=question))
+    aging(question, len(answers))
     print(answers)
 
     # if answer does not exist
