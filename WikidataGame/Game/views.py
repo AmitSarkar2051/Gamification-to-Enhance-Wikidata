@@ -11,6 +11,9 @@ from .forms import GenreForm, QuizForm
 from .models import Question, Answer
 import urllib.request
 from bs4 import BeautifulSoup
+import math
+
+age_threshold = 200
 
 @login_required
 def index(request):
@@ -66,7 +69,7 @@ def genres(request):
     return render(request, 'genres.html', context)
 
 
-def aging(question, unique_answers):
+def aging(question, unique_answers, confidence_score):
 
     ## for a given question we need to take into account the number of users we have shown the question till now, the number of unique answers and the confidence among those answers. 
 
@@ -76,15 +79,20 @@ def aging(question, unique_answers):
     new_views = question.number_of_views + 1
     new_age = question.age
 
-    ### TO BE ADDED ## the confidence score among all the various answers will be following a quadratic type of curve, where it will be responsible for aging if the score is too high or too low and less weight if it lies somewhere in middle. 
+    ## the confidence score among all the various answers will be following a quadratic type of curve, where it will be responsible for aging if the score is too high or too low and less weight if it lies somewhere in middle. 
 
     if new_views < 10:
         
         ## less chances of having a definite answer, so less weightage to number of unique answers and thier correctness
-        new_age = 3 * new_views + (10 * (1/unique_answers))
+        new_age = 3 * new_views + (10 * (1/unique_answers)) + (100 * math.pow(confidence_score-0.4,2))
     else:
-        new_age = 3 * new_views + (50 * (1/unique_answers))
+        new_age = 3 * new_views + (50 * (1/unique_answers)) + (500 * math.pow(confidence_score-0.4,2))
         
+
+    if new_age > age_threshold:
+
+        ### TO BE ADDED ## update the question's answer into the wikitable using the bot from here.
+        question.is_updated = True
 
     question.age = new_age
     question.number_of_views = new_views
@@ -134,7 +142,6 @@ def check(question, current_user, answer = None, reference = None):
     question_id = question.question_id
     # prev_trust = current_user.trust_score
     answers = list(Answer.objects.values_list('answer', flat=True).filter(question_id=question))
-    aging(question, len(answers))
     print(answers)
 
     # if answer does not exist
@@ -167,7 +174,10 @@ def check(question, current_user, answer = None, reference = None):
             answer_obj.confidence_score += 0.1
             # current_user.trust_score += 0.08
         answer_obj.save()
-                
+
+    best_answer_confidence = 0
+    aging(question, len(answers), best_answer_confidence)
+                    
             
 
 def reference_checker(reference, question, answer):
