@@ -11,8 +11,8 @@ from django.utils.timezone import make_aware
 class Question(models.Model):
     question_id = models.AutoField(primary_key=True)
     genre_name = models.CharField(max_length=100, blank=True, null=True)
-    question_object = models.CharField(max_length=200)
-    question_property = models.CharField(max_length=200)
+    question_object = models.CharField(max_length=200, null=True)
+    question_property = models.CharField(max_length=200, null=True)
     number_of_views = models.FloatField(default=0)
     age = models.FloatField(default=0)
     is_updated = models.BooleanField(default=False)
