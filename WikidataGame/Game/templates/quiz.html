@@ -68,34 +68,35 @@
         <h1 class="title">Quiz</h1>
     </div>
 
-    <form action="quiz&{{genre}}" method="POST">
+    <form action="quiz&{{genre}}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="card">
-            <h3>{{ question_hin }}</h3>
+            <h3><b>Object: </b>{{ question_object }}</h3>
+            <h3><b>Property: </b>{{ question_property }}</h3>
 
             <ol type="A">
-                <li class="option" onclick="document.getElementById('{{ form.answer.auto_id }}').value=this.innerHTML">1
+                {% for a in answers %}
+                <li class="option" onclick="document.getElementById('{{ form.answer.auto_id }}').value=this.innerHTML">
+                    {{ a }}
                 </li>
-                <li class="option" onclick="document.getElementById('{{ form.answer.auto_id }}').value=this.innerHTML">2
-                </li>
-                <li class="option" onclick="document.getElementById('{{ form.answer.auto_id }}').value=this.innerHTML">3
-                </li>
+                {% endfor %}
             </ol>
 
             <div class="text-center">
                 <h4>
-                    Answer(If it is not in the above options): <br>
+                    Answer(If not in the above options): <br><br>
                     {{ form.answer }}<br><br>
-                    Reference: <br>
-                    {{ form.reference }}
+                    Reference(provide either a link or a file): <br><br>
+                    Link: {{ form.reference_url }} <br>
+                    File: {{ form.reference_file }}
                 </h4>
             </div>
         </div>
 
         <div class="text-center">
             <div class="timer">
-                <span id="time">100 </span>
+                <span id="time">1000 </span>
                 <span>seconds</span>
             </div>
 

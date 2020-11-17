@@ -8,7 +8,8 @@ class UserRegisterForm(UserCreationForm):
     phone_no = forms.CharField(max_length=20)
     first_name = forms.CharField(max_length=20)
     last_name = forms.CharField(max_length=20)
-    trust_score = forms.FloatField(widget=forms.HiddenInput(), required=False)
+    trust_score = forms.FloatField(
+        widget=forms.HiddenInput(), initial=0, required=False)
 
     class Meta:
         model = User

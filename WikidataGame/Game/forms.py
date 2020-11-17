@@ -15,8 +15,6 @@ class HandleForm(forms.Form):
             print('Not Equal')
             raise forms.ValidationError('Fields Do NOT match')
 
-        # return handle_form
-
 
 class GenreForm(forms.Form):
     genre = forms.CharField(max_length=100)
@@ -24,4 +22,5 @@ class GenreForm(forms.Form):
 
 class QuizForm(forms.Form):
     answer = forms.CharField(max_length=100, required=False)
-    reference = forms.CharField(max_length=500, required=False)
+    reference_url = forms.CharField(max_length=500, required=False)
+    reference_file = forms.FileField(required=False)
