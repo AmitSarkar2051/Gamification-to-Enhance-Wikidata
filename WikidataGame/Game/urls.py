@@ -10,7 +10,6 @@ urlpatterns = [
     path('Game/sign_up/', views.sign_up, name="sign-up"),
     path('home', views.home, name='home'),
     path('genres', views.genres, name='genres'),
-    # path('quiz', views.quiz, name='quiz'),
     url(r'^quiz&(?P<genre>[\w.@+-]+)$',
         views.quiz, name='quiz'),
 ]
