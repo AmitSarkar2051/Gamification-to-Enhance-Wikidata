@@ -85,18 +85,18 @@
 <div class="container-fluid">
 
     <div class="sidenav">
-        <h1 class="welcome">Welcome {{user.username}}!</h1>
+        <h1 class="welcome">आपका स्वागत है {{user.username}}!</h1>
         {% load static %}
         <img src="{% static 'default.png' %}" alt="" class="profile-pic">
 
         <div class="details">
             <h2>{{user.first_name}} {{user.last_name}}</h2>
-            <h3>Score: {{user.trust_score}}</h3>
+            <h3>कुल अंक: {{user.trust_score}}</h3>
         </div>
     </div>
 
     <div class="page-content">
-        <h1 class="title">Genres</h1>
+        <h1 class="title">वर्ग</h1>
 
         <form action="genres" method="POST">
             {% csrf_token %}
@@ -114,7 +114,7 @@
             </div>
 
             <div class="text-center">
-                <input type="submit" class="btn btn-lg btn-primary" value="Start Game">
+                <input type="submit" class="btn btn-lg btn-primary" value="शुरू करे">
             </div>
         </form>
 
