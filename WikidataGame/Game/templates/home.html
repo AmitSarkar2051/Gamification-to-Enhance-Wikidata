@@ -75,35 +75,32 @@
 <div class="container-fluid">
 
     <div class="sidenav">
-        <h1 class="welcome">Welcome {{user.username}}!</h1>
+        <h1 class="welcome">आपका स्वागत है {{user.username}}!</h1>
         {% load static %}
         <img src="{% static 'default.png' %}" alt="" class="profile-pic">
 
         <div class="details">
             <h2>{{user.first_name}} {{user.last_name}}</h2>
-            <h3>Score: {{user.trust_score}}</h3>
+            <h3>कुल अंक: {{user.trust_score}}</h3>
         </div>
     </div>
 
     <div class="page-content">
-        <h1 class="title">Instructions</h1>
+        <h1 class="title">कैसे खेलें?</h1>
         <ul>
-            <li class="instruction">The users will be asked to login/signup and will be directed to the main dashboard, where if
-                they have not already can update their profile picture.</li>
-            <li class="instruction">The users will be shown options for multiplayer and single player, from which they can choose
-                which mode to compete.</li>
-            <li class="instruction">After choosing the mode, the player will be displayed several genres in which they want to play.</li>
-            <li class="instruction">Once the genre is selected, the player will be given instructions on how to fill the answer within
-                the time limit</li>
-            <li class="instruction">Once the genre is chosen and the game is started, the user will be displayed some questions, to
-                which he has to give an answer along with a reference, or simply give an answer or just skip the
-                answer.</li>
-            <li class="instruction">The scores are assigned to the user and the question so that a trusted user has more weightage
-                at the end, while updating the answer.</li>
+            <li class="instruction">सबसे पहले नीचे दिए गए खेले बटन को दबाये, यह आपको विभिन्न वर्ग के पृष्ठ पर ले जायेगा|</li>
+            <li class="instruction">अब आपको विभिन्न खेल के वर्ग दिखेंगे, आप इसमे अपना मनपसंद वर्ग चुन सकते हैं |</li>
+            <li class="instruction">उस वर्ग पर क्लिक करें और शुरू बटन दबाये |</li>
+            <li class="instruction">अब आपको उस वर्ग के सवाल दिखाए जाएँगे| आपके पास हर सवाल के लिए 100 सेकंड रहेंगे, इसके पश्चात अपने आप नया सवाल दिखाया जाएगा और इस सवाल का कोई मूल्य नहीं रहेगा अगर आप उत्तर नहीं भरते हैं तो|</li>
+            <li class="instruction">हर सवाल में आपको 3 विकल्प मिलेंगे, आप किसी को भी चुन सकते है| इसके अलावा आपको खुद का उत्तर डालने का प्रयत्न भी है|</li>
+            <li class="instruction">उत्तर भरने के बाद आपको सन्दर्भ भरने का भी प्रयत्न दिया गया है | इसमे आप यूआरएल, इमेज या पीडीएफ डाल सकते है |</li>
+            <li class="instruction">ध्यान रहे अगर आपका सन्दर्भ आपके उत्तर से मैच नहीं करेगा तो आपको पॉइंट्स मे नुकसान होगा, वर्ना फ़ायदा, इसलिए सही सन्दर्भ का उपयोग करे |
+                आप सन्दर्भ को खाली भी छोड़ सकते है|</li>
+            <li class="instruction">जब आपका हो जाये तो खेल खत्म कर दे |</li>
         </ul>
 
         <div class="text-center">
-            <a href="genres" class="btn btn-dark btn-lg" role="button">Play</a>
+            <a href="genres" class="btn btn-dark btn-lg" role="button">खेले</a>
         </div>
     </div>
 </div>

@@ -45,6 +45,6 @@ def Login(request):
             messages.success(request, f' wecome {username} !!')
             return redirect('/home')
         else:
-            messages.info(request, f'account done not exit plz sign in')
+            messages.info(request, f'गलत उपयोगकर्ता नाम या पासवर्ड!')
     form = AuthenticationForm()
     return render(request, 'user/login.html', {'form': form, 'title': 'log in'})
