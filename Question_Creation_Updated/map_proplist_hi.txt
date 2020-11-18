@@ -1,0 +1,206 @@
+P231,CAS Registry Number
+P246,element symbol
+P1014,Art & Architecture Thesaurus ID
+P1036,Dewey Decimal Classification
+P1051,PSH ID
+P1086,atomic number
+P1108,electronegativity
+P1109,refractive index
+P1121,oxidation state
+P1245,OmegaWiki Defined Meaning
+P1417,Encyclopædia Britannica Online ID
+P2054,density
+P2101,melting point
+P2102,boiling point
+P2114,half-life
+P2116,enthalpy of vaporization
+P2152,antiparticle
+P2260,ionization energy
+P2347,YSO ID
+P2581,BabelNet ID
+P268,Bibliothèque nationale de France ID
+P2924,Great Russian Encyclopedia Online ID
+P2959,permanent duplicated item
+P3219,Encyclopædia Universalis ID
+P3222,NE.se ID
+P3365,Treccani ID
+P3417,Quora topic ID
+P3569,Cultureel Woordenboek ID
+P3827,JSTOR topic ID
+P3916,UNESCO Thesaurus ID
+P4213,Unicode hex codepoint
+P4839,Wolfram Language entity code
+P486,MeSH descriptor ID
+P487,Unicode character
+P5008,on focus list of Wikimedia project
+P5019,Brockhaus Enzyklopädie online ID
+P5076,Römpp online ID
+P575,time of discovery or invention
+P6366,Microsoft Academic ID
+P6573,Klexikon article ID
+P672,MeSH tree code
+P683,ChEBI ID
+P6900,NicoNicoPedia ID
+P7033,Australian Educational Vocabulary ID
+P7818,French Vikidia ID
+P7822,Italian Vikidia ID
+P7827,Spanish Vikidia ID
+P7829,English Vikidia ID
+P8000,electron configuration
+P8408,KBpedia ID
+P950,Biblioteca Nacional de España ID
+P232,EC number
+P233,canonical SMILES
+P234,InChI
+P235,InChIKey
+P1225,U.S. National Archives Identifier
+P1552,has quality
+P2115,NDF-RT ID
+P2566,ECHA InfoCard ID
+P274,chemical formula
+P2822,by-product of
+P2892,UMLS CUI
+P3071,standard molar entropy
+P3117,DSSTox substance ID
+P3345,RxNorm ID
+P366,use
+P4147,conjugate acid
+P4342,Store norske leksikon ID
+P4842,ASHRAE refrigerant number
+P5417,Common Procurement Vocabulary
+P592,ChEMBL ID
+P628,E number
+P652,UNII
+P661,ChemSpider ID
+P662,PubChem CID
+P6706,De Agostini ID
+P679,ZVG number
+P7049,AICS Chemical ID
+P715,DrugBank ID
+P8072,CAB ID
+P8494,DSSTOX compound identifier
+P989,spoken text audio
+P1461,Patientplus ID
+P1748,NCI Thesaurus ID
+P2017,isomeric SMILES
+P2066,fusion enthalpy
+P2175,medical condition treated
+P3221,New York Times topic ID
+P4168,IEDB Epitope ID
+P1296,Gran Enciclopèdia Catalana ID
+P1542,has effect
+P1578,Gmelin number
+P1931,NIOSH Pocket Guide ID
+P2055,electrical conductivity
+P2119,vapor pressure
+P2129,immediately dangerous to life or health
+P2404,time-weighted average exposure limit
+P2405,ceiling exposure limit
+P443,pronunciation audio
+P5082,Store medisinske leksikon ID
+P5220,ICSC ID
+P5555,schematic
+P657,RTECS number
+P7025,HCIS ID
+P7524,CA PROP 65 ID
+P2868,subject has role
+P5479,ultimate tensile strength
+P6263,MinDat mineral ID
+P665,KEGG ID
+P3073,CosIng number
+P4215,nLab ID
+P4732,IUPAC Gold Book ID
+P5437,EuroVoc ID
+P1820,Open Food Facts food additive ID
+P267,ATC code
+P3471,WikiSkripta ID
+P4527,UK Parliament thesaurus ID
+P2004,NALT ID
+P2120,radius
+P2163,FAST ID
+P2167,UNSPSC Code
+P461,opposite of
+P7832,Basque Vikidia ID
+P920,LEM ID
+P4952,safety classification and labelling
+P5679,electrical resistivity
+P703,found in taxon
+P7388,Great Encyclopedia of Navarre ID
+P4212,PACTOLS thesaurus ID
+P4235,PatientsLikeMe treatment ID
+P5930,Open Food Facts ingredient ID
+P186,material used
+P2184,history of topic
+P2950,Nomisma ID
+P3832,Europeana Fashion Vocabulary ID
+P3911,STW Thesaurus for Economics ID
+P5198,ASC Leiden Thesaurus ID
+P5395,Canadian Encyclopedia article ID
+P5604,archINFORM keyword ID
+P5994,recycling code
+P6694,MeSH concept ID
+P8061,AGROVOC ID
+P8406,Grove Art Online ID
+P8519,RKD thesaurus ID
+P2204,minimum explosive concentration
+P6262,Fandom article ID
+P4746,Elhuyar ZTH ID
+P2057,Human Metabolome Database ID
+P1807,Great Aragonese Encyclopedia ID
+P5676,relative permeability
+P6075,embodied energy
+P7830,LiverTox ID
+P8472,Encyclopedie berbere ID
+P902,HDS ID
+P922,magnetic ordering
+P2840,NSC number
+P1579,Reaxys registry number
+P3031,EPPO Code
+P3070,dynamic viscosity
+P3636,PDB ligand ID
+P638,PDB structure ID
+P1900,EAGLE id
+P4254,Banglapedia (Bengali version) ID
+P1088,Mohs' hardness
+P2056,heat capacity
+P5480,tensile modulus of elasticity
+P5483,hardness
+P556,crystal system
+P5593,Poisson's ratio
+P5673,shear modulus
+P6363,WordLift URL
+P2407,short-term exposure limit
+P1987,MCN code
+P8121,UM-BBD compound ID
+P8483,PM20 geo code
+P1282,OpenStreetMap tag or key
+P1441,present in work
+P3612,Le Monde diplomatique subject ID
+P5993,compressive modulus of elasticity
+P3780,active ingredient in
+P2113,sublimation temperature
+P2240,median lethal dose (LD50)
+P2300,minimal lethal dose
+P7982,Hrvatska enciklopedija ID
+P498,ISO 4217 code
+P906,SELIBR ID
+P6623,Gamepedia article ID
+P2284,price
+P5674,thermal diffusivity
+P5798,Thomson Reuters Business Classification
+P2910,icon
+P1424,topic's main template
+P4223,Treccani's Enciclopedia Italiana ID
+P6081,RIA Novosti reference
+P7084,related category
+P3241,Catholic Encyclopedia ID
+P6404,Treccani's Dizionario di Storia ID
+P2079,fabrication method
+P5247,Giant Bomb ID
+P695,UN number
+P2759,AUSNUT food ID
+P6385,Krugosvet article
+P5357,The Encyclopedia of Science Fiction ID
+P2849,produced by
+P5063,ILI ID
+P898,IPA transcription

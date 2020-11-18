@@ -1,0 +1,235 @@
+named after
+image
+location of discovery
+GND ID
+CAS Registry Number
+Library of Congress authority ID
+element symbol
+instance of
+discoverer or inventor
+Art & Architecture Thesaurus ID
+Dewey Decimal Classification
+PSH ID
+atomic number
+electronegativity
+refractive index
+oxidation state
+OmegaWiki Defined Meaning
+described by source
+Encyclopædia Britannica Online ID
+different from
+density
+mass
+thermal conductivity
+speed of sound
+melting point
+boiling point
+half-life
+enthalpy of vaporization
+antiparticle
+ionization energy
+YSO ID
+BabelNet ID
+Bibliothèque nationale de France ID
+subclass of
+Great Russian Encyclopedia Online ID
+permanent duplicated item
+Encyclopædia Universalis ID
+NE.se ID
+Treccani ID
+Quora topic ID
+National Diet Library ID
+Cultureel Woordenboek ID
+part of
+Commons category
+JSTOR topic ID
+UNESCO Thesaurus ID
+Unicode hex codepoint
+color
+Wolfram Language entity code
+MeSH descriptor ID
+Unicode character
+on focus list of Wikimedia project
+Brockhaus Enzyklopädie online ID
+Römpp online ID
+BNCF Thesaurus ID
+time of discovery or invention
+Microsoft Academic ID
+Freebase ID
+Klexikon article ID
+MeSH tree code
+ChEBI ID
+NicoNicoPedia ID
+Australian Educational Vocabulary ID
+French Vikidia ID
+Italian Vikidia ID
+Spanish Vikidia ID
+English Vikidia ID
+electron configuration
+KBpedia ID
+topic's main category
+Commons gallery
+Biblioteca Nacional de España ID
+EC number
+canonical SMILES
+InChI
+InChIKey
+U.S. National Archives Identifier
+has quality
+NDF-RT ID
+ECHA InfoCard ID
+chemical formula
+by-product of
+UMLS CUI
+standard molar entropy
+DSSTox substance ID
+RxNorm ID
+use
+conjugate acid
+Store norske leksikon ID
+ASHRAE refrigerant number
+Common Procurement Vocabulary
+ChEMBL ID
+E number
+UNII
+ChemSpider ID
+PubChem CID
+De Agostini ID
+ZVG number
+NKCR AUT ID
+AICS Chemical ID
+DrugBank ID
+CAB ID
+DSSTOX compound identifier
+spoken text audio
+Patientplus ID
+NCI Thesaurus ID
+isomeric SMILES
+fusion enthalpy
+medical condition treated
+New York Times topic ID
+IEDB Epitope ID
+Gran Enciclopèdia Catalana ID
+has effect
+Gmelin number
+NIOSH Pocket Guide ID
+electrical conductivity
+vapor pressure
+immediately dangerous to life or health
+time-weighted average exposure limit
+ceiling exposure limit
+pronunciation audio
+Store medisinske leksikon ID
+ICSC ID
+schematic
+RTECS number
+HCIS ID
+CA PROP 65 ID
+subject has role
+ultimate tensile strength
+MinDat mineral ID
+KEGG ID
+CosIng number
+nLab ID
+IUPAC Gold Book ID
+EuroVoc ID
+Open Food Facts food additive ID
+ATC code
+WikiSkripta ID
+UK Parliament thesaurus ID
+NALT ID
+radius
+FAST ID
+UNSPSC Code
+opposite of
+Basque Vikidia ID
+LEM ID
+followed by
+follows
+safety classification and labelling
+electrical resistivity
+found in taxon
+Great Encyclopedia of Navarre ID
+PACTOLS thesaurus ID
+PatientsLikeMe treatment ID
+Open Food Facts ingredient ID
+material used
+history of topic
+Nomisma ID
+Europeana Fashion Vocabulary ID
+STW Thesaurus for Economics ID
+ASC Leiden Thesaurus ID
+Canadian Encyclopedia article ID
+archINFORM keyword ID
+recycling code
+MeSH concept ID
+AGROVOC ID
+Grove Art Online ID
+RKD thesaurus ID
+minimum explosive concentration
+exact match
+Fandom article ID
+locator map image
+Elhuyar ZTH ID
+Human Metabolome Database ID
+Great Aragonese Encyclopedia ID
+relative permeability
+embodied energy
+LiverTox ID
+Encyclopedie berbere ID
+HDS ID
+magnetic ordering
+NSC number
+Reaxys registry number
+EPPO Code
+dynamic viscosity
+PDB ligand ID
+PDB structure ID
+EAGLE id
+Banglapedia (Bengali version) ID
+Mohs' hardness
+heat capacity
+name
+tensile modulus of elasticity
+hardness
+crystal system
+Poisson's ratio
+shear modulus
+WordLift URL
+short-term exposure limit
+MCN code
+UM-BBD compound ID
+PM20 geo code
+OpenStreetMap tag or key
+present in work
+Le Monde diplomatique subject ID
+compressive modulus of elasticity
+active ingredient in
+sublimation temperature
+median lethal dose (LD50)
+minimal lethal dose
+Hrvatska enciklopedija ID
+ISO 4217 code
+SELIBR ID
+Gamepedia article ID
+price
+thermal diffusivity
+Thomson Reuters Business Classification
+native label
+icon
+topic's main template
+Treccani's Enciclopedia Italiana ID
+RIA Novosti reference
+related category
+logo image
+Catholic Encyclopedia ID
+Treccani's Dizionario di Storia ID
+fabrication method
+Giant Bomb ID
+UN number
+AUSNUT food ID
+Krugosvet article
+The Encyclopedia of Science Fiction ID
+produced by
+ILI ID
+IPA transcription
