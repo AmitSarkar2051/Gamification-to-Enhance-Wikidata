@@ -65,15 +65,15 @@
 
 <div class="container-fluid">
     <div class="page-content">
-        <h1 class="title">Quiz</h1>
+        <h1 class="title">प्रश्नोत्तरी</h1>
     </div>
 
     <form action="quiz&{{genre}}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="card">
-            <h3><b>Object: </b>{{ question_object }}</h3>
-            <h3><b>Property: </b>{{ question_property }}</h3>
+            <h3><b>वस्तु: </b>{{ question_object }}</h3>
+            <h3><b>गुण: </b>{{ question_property }}</h3>
 
             <ol type="A">
                 {% for a in answers %}
@@ -85,9 +85,9 @@
 
             <div class="text-center">
                 <h4>
-                    Answer(If not in the above options): <br><br>
+                    उत्तर (अगर उपरोक्त विकल्पों में नहीं है): <br><br>
                     {{ form.answer }}<br><br>
-                    Reference(provide either a link or a file): <br><br>
+                    सन्दर्भ (Reference(provide either a link or a file)): <br><br>
                     Link: {{ form.reference_url }} <br>
                     File (PDF or Image): {{ form.reference_file }}
                 </h4>
