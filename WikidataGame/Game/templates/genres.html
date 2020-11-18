@@ -62,6 +62,8 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
         width: 60%;
         padding: 10%;
         text-align: center;
@@ -91,7 +93,7 @@
 
         <div class="details">
             <h2>{{user.first_name}} {{user.last_name}}</h2>
-            <h3>कुल अंक: {{user.trust_score}}</h3>
+            <h3>कुल अंक: 0</h3>
         </div>
     </div>
 
@@ -110,6 +112,7 @@
                         {{ genre }}
                     </div>
                 </div>
+                <br><br>
                 {% endfor %}
             </div>
 
