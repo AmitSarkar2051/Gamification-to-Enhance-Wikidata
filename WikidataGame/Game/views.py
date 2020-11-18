@@ -12,6 +12,9 @@ from .models import Question, Answer
 import urllib.request
 from bs4 import BeautifulSoup
 import math
+import PyPDF2
+from PIL import Image
+import pytesseract
 
 from numpy.random import choice
 
@@ -161,7 +164,7 @@ def check(question, current_user, answer, reference_url, reference_file):
 
     # if answer does not exist
     if answer not in answers:
-        if reference_url is not '' or reference_file is not None:
+        if reference_url != '' or reference_file is not None:
             if reference_checker(reference_url, reference_file, question, answer):
                 answer_obj = Answer(question_id=question,
                                     answer=answer, confidence_score=0.2)
@@ -179,7 +182,7 @@ def check(question, current_user, answer, reference_url, reference_file):
             # current_user.trust_score += 0.05
     else:
         answer_obj = Answer.objects.get(answer=answer, question_id=question)
-        if reference_url is not '' or reference_file is not None:
+        if reference_url != '' or reference_file is not None:
             # check which answer is the most used and score accordingly, also trust score will play a role here
             if reference_checker(reference_url, reference_file, question, answer):
                 answer_obj.confidence_score += 0.2
@@ -197,8 +200,7 @@ def check(question, current_user, answer, reference_url, reference_file):
 
 
 def reference_checker(reference_url, reference_file, question, answer):
-    print(reference_url, reference_file)
-    if reference_url is not '':
+    if reference_url != '':
         # Reference link provided
         try:
             f = urllib.request.urlopen(reference_url)
@@ -221,5 +223,19 @@ def reference_checker(reference_url, reference_file, question, answer):
             return False
 
     else:
-        # Reference file provided
-        pass
+        content = ''
+        try:
+            pdf_reader = PyPDF2.PdfFileReader(reference_file)
+            num_pages = pdf_reader.numPages
+            content = ''
+            for page in range(0, num_pages):
+                content += pdf_reader.getPage(page).extractText()        
+        except:
+            img = Image.open(reference_file)
+            content = pytesseract.image_to_string(img)
+
+        tokens = content.split(" ")
+        if answer not in tokens:
+            return False
+        else:
+            return True
