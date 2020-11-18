@@ -5,10 +5,11 @@ from django.contrib.auth.models import User
 from datetime import datetime
 from django.utils.timezone import make_aware
 
-# Create your models here.
-
 
 class Question(models.Model):
+    '''
+    The Question Model contains all details regarding a question
+    '''
     question_id = models.AutoField(primary_key=True)
     genre_name = models.CharField(max_length=100, blank=True, null=True)
     question_object = models.CharField(max_length=200, null=True)
@@ -21,6 +22,9 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
+    '''
+    The Answer Model contains answers entered by a user as well as the question
+    '''
     question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
     answer = models.CharField(max_length=100)
     confidence_score = models.FloatField(default=0)
