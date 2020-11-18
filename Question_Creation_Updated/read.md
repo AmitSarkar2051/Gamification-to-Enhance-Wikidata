@@ -14,6 +14,9 @@ Run the below commands to create a folder of relevant properties:
   
 
 
+
+
+
 Other codes, 
   
   (1) to get a mapping file that include automated english to hindi translation we can use the below code with same run cmd,
